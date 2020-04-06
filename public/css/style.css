@@ -1,0 +1,19 @@
+.main-content {
+  padding: 50px;
+}
+
+a.register {
+  color: white;
+}
+a.register :hover {
+  color: white;
+}
+
+.bg-dark {
+  border-radius: 5px;
+}
+
+.intro {
+  background: url(../img/bg.jpg);
+  height: 600px;
+}

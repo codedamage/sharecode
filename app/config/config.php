@@ -2,13 +2,13 @@
 //DB Params
 
 define('DB_HOST', 'localhost');
-define('DB_USER', '_USER');
-define('DB_PASS', '_PASS');
-define('DB_NAME', '__DBNAME');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'sharecode');
 
 //App root
 define('APPROOT', dirname(dirname(__FILE__)));
 //URL Root
-define('URLROOT', '__YOUR_PROJECT_URL');
+define('URLROOT', 'http://sharecode.loc/');
 //Sitename
-define('SITENAME', '__YOUR_SITENAME');
+define('SITENAME', 'ShareCode');
