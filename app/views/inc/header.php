@@ -28,9 +28,11 @@
             </li>
         </ul>
         <div class="btn-group" role="group" aria-label="Basic example">
-        <a class="btn btn-light my-2 my-sm-0">Login</a>
-        <a class="btn btn-light my-2 my-sm-0">Register</a>
+        <a class="btn btn-light my-2 my-sm-0" href="<?php echo URLROOT; ?>users/login">Login</a>
+        <a class="btn btn-light my-2 my-sm-0" href="<?php echo URLROOT; ?>users/register">Register</a>
         </div>
     </div>
 </nav>
+    <h2 class="pagename"><?php echo $data['title']; ?></h2>
+</div>
 </div>

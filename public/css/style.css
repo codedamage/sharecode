@@ -15,5 +15,13 @@ a.register :hover {
 
 .intro {
   background: url(../img/bg.jpg);
-  height: 600px;
+  height: 300px;
+  background-size: cover;
+  background-position: center 10%;
+}
+
+h2.pagename {
+  color: #fff;
+  font-weight: lighter;
+  margin-top: 65px;
 }
