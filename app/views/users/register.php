@@ -13,7 +13,7 @@ require APPROOT . '/views/inc/header.php';
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required value="<?php echo $data['email']; ?>">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     <span class="invalid-feedback"><?php echo $data['email_error']; ?></span>
                 </div>

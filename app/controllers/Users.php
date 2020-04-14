@@ -48,8 +48,18 @@ class Users extends Controller
             }
             if(empty($data['email_error']) && empty($data['name_error']) && empty($data['password_error']))
             {
-//                Form prosess
-                die('Success');
+//                Form process
+                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+                if ($this->userModel->register($data))
+                {
+                    redirect('users/login');
+                }
+                else
+                {
+                    die('Fail, problems on our side, try again later!');
+                }
+
+
             }
             else
             {

@@ -25,3 +25,7 @@ h2.pagename {
   font-weight: lighter;
   margin-top: 65px;
 }
+
+.invalid-feedback {
+  display: block;
+}
