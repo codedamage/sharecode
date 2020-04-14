@@ -29,3 +29,7 @@ h2.pagename {
 .invalid-feedback {
   display: block;
 }
+
+.card {
+  padding-left: 0px;
+}

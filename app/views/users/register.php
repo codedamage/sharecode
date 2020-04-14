@@ -24,7 +24,7 @@ require APPROOT . '/views/inc/header.php';
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword2">Password confirmation</label>
-                    <input name="password" type="password" class="form-control" id="exampleInputPassword2" required>
+                    <input name="confirm_password" type="password" class="form-control" id="exampleInputPassword2" required>
                 </div>
                 <button type="submit" class="btn btn-secondary">Register account</button>
             </form>

@@ -52,6 +52,7 @@ class Users extends Controller
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
                 if ($this->userModel->register($data))
                 {
+                    sessionAlert('register_success', 'You successfully registered account, now you can log in.');
                     redirect('users/login');
                 }
                 else
@@ -98,31 +99,42 @@ class Users extends Controller
                 'email_error' => '',
                 'password_error' => ''
             ];
-//            Validate form
+//          Check user email field fill
             if (empty($data['email']))
             {
                 $data['name_error'] = 'Enter name!';
             }
-            else
-            {
-                if ($this->userModel->findUserByEmail($data['email']))
-                {
-                    $data['name_error'] = 'Email is taken!';
-                }
-            }
+//          Check user pass field fill
             if (empty($data['password']))
             {
                 $data['password_error'] = 'Wrong password!';
             }
+ //         Check for user/email
+            if($this->userModel->findUserByEmail($data['email'])){
+//          User found
+            } else {
+//              User not found
+                $data['email_error'] = 'No user found';
+            }
             if(empty($data['email_error']) && empty($data['password_error']))
             {
-//                Form prosess
-                $this->view('pages/index', $data);
-                die('Logged in!');
+//          Form process
+//          Check and set logged in user
+                $loggedInUser = $this->userModel->login($data['email'], $data['password']);
+                if ($loggedInUser)
+                {
+//          Create session
+                    $this->createUserSession($loggedInUser);
+                }
+                else
+                {
+                    $data['password_error'] = 'Password incorrect';
+                    $this->view('users/login', $data);
+                }
             }
             else
             {
-//                Load viev with errors
+//                Load view with errors
                 $this->view('users/login', $data);
             }
         }
@@ -139,5 +151,20 @@ class Users extends Controller
 //            Load view
             $this->view('users/login', $data);
         }
+    }
+    public function createUserSession($user)
+    {
+        $_SESSION['user_id'] = $user->id;
+        $_SESSION['user_name'] = $user->name;
+        $_SESSION['user_email'] = $user->email;
+        redirect('pages/index');
+    }
+    public function logout()
+    {
+        unset($_SESSION['user_id']);
+        unset($_SESSION['user_name']);
+        unset($_SESSION['user_email']);
+        session_destroy();
+        redirect('users/login');
     }
 }

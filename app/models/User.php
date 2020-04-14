@@ -22,13 +22,29 @@ class User{
             return false;
         }
     }
+    public function login($email, $password)
+    {
+        $this->db->query('SELECT * FROM users WHERE email = :email');
+        $this->db->bind(':email', $email);
+
+        $row = $this->db->single();
+        $password_hash = $row->password;
+        if (password_verify($password, $password_hash))
+        {
+            return $row;
+        }
+        else
+        {
+            return false;
+        }
+    }
 //    Find user by email
-    public function findUserByEmail()
+    public function findUserByEmail($email)
     {
         $this->db->query('SELECT * FROM users WHERE email = :email');
         $this->db->bind(':email', $email);
         $row = $this->db->single();
-        if($this->db->rowCount > 0)
+        if($this->db->rowCount() > 0)
         {
             return true;
         }

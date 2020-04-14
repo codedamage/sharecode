@@ -28,8 +28,7 @@
             </li>
         </ul>
         <div class="btn-group" role="group" aria-label="Basic example">
-        <a class="btn btn-light my-2 my-sm-0" href="<?php echo URLROOT; ?>users/login">Login</a>
-        <a class="btn btn-light my-2 my-sm-0" href="<?php echo URLROOT; ?>users/register">Register</a>
+       <?php  navbarIdentifier(); ?>
         </div>
     </div>
 </nav>
