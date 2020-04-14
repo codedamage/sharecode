@@ -5,6 +5,7 @@ require APPROOT . '/views/inc/header.php';
         <div class="row">
             <div class="col-md-6 mx-auto card card-body bg-light">
                 <?php echo sessionAlert('register_success'); ?>
+                <?php echo sessionAlert('access_denied'); ?>
                 <form action="<?php echo URLROOT; ?>/users/login" method="POST">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>

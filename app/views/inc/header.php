@@ -24,8 +24,18 @@
                 <a class="nav-link" href="<?php echo URLROOT; ?>">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about" >About</a>
+                <a class="nav-link" href="<?php echo URLROOT; ?>pages/about" >About</a>
             </li>
+            <?php
+            if (isUserLoggedIn())
+            {
+                ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URLROOT; ?>posts" >Snippets</a>
+                </li>
+                <?php
+            }
+            ?>
         </ul>
         <div class="btn-group" role="group" aria-label="Basic example">
        <?php  navbarIdentifier(); ?>

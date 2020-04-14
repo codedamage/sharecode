@@ -30,6 +30,10 @@ h2.pagename {
   display: block;
 }
 
-.card {
+.card.post {
   padding-left: 0px;
+}
+
+.add_snippet {
+  margin-bottom: 30px;
 }

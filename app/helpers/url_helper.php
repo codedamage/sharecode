@@ -2,5 +2,5 @@
 //Redirect to page
 function redirect($location)
 {
-    header('Location: '.URLROOT.'/'.$location);
+    header('Location: '.URLROOT.''.$location);
 }
