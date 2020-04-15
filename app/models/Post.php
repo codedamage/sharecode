@@ -17,4 +17,20 @@ class Post
         $this->db->bind(':currentuser', $_SESSION['user_id']);
         return $this->db->resultSet();
     }
+    public  function addPost($data)
+    {
+        $this->db->query('INSERT posts (title, description, user_id, body) VALUES (:title, :description, :user_id, :body)');
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':description', $data['description']);
+        $this->db->bind(':user_id', $data['user_id']);
+        $this->db->bind(':body', $data['body']);
+        if ($this->db->execute())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

@@ -2,7 +2,8 @@
 require APPROOT . '/views/inc/header.php';
 ?>
 <div class="container content main-content">
-    <a href="#" class="btn btn-success add_snippet">Add Snippet</a>
+    <a href="<?php echo URLROOT; ?>posts/add" class="btn btn-success add_snippet">Add Snippet</a>
+    <?php echo sessionAlert('snippet_added'); ?>
 <div class="row">
 <?php
 foreach ($data['posts'] as $post)
