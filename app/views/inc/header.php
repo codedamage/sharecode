@@ -31,7 +31,7 @@
             {
                 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URLROOT; ?>posts" >Snippets</a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>posts" >My snippets</a>
                 </li>
                 <?php
             }

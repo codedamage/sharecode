@@ -17,8 +17,8 @@ foreach ($data['posts'] as $post)
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title"><a href="<?php echo URLROOT; ?>single/<?php echo $post->postId; ?>"><?php echo $post->title; ?></a> </h5>
-                    <p class="card-text"><?php echo substr($post->body, 0, 200); ?></p>
-                    <p class="card-text"><small class="text-muted">Posted by <?php echo $post->name; ?></small></p>
+                    <p class="card-text"><?php echo substr($post->description, 0, 150); ?></p>
+                    <p class="card-text"><small class="text-muted">Posted by <?php echo $_SESSION['user_name']; ?></small></p>
                 </div>
             </div>
         </div>

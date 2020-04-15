@@ -14,7 +14,7 @@ class Posts extends Controller
 
     public function index()
     {
-        $posts = $this->postModel->getPosts();
+        $posts = $this->postModel->getCurrentUserPosts();
         $data = [
             'title' => 'Snippets',
             'posts' => $posts
