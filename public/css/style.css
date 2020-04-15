@@ -37,3 +37,8 @@ h2.pagename {
 .add_snippet {
   margin-bottom: 30px;
 }
+
+pre {
+  margin: 10px auto !important;
+  width: 97%;
+}
